@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:padding="15dp"
+        android:background="#f7f7f7"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                >
+                <TextView
+                    android:id="@+id/label_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_balance"
+                    android:textSize="15sp"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/txt_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_balance"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/income_expense"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:padding="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape_income_expense"
+                    >
+
+                    <TextView
+                        android:id="@+id/label_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/renda"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_income"
+                        app:layout_constraintTop_toBottomOf="@id/label_income"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/green"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    >
+
+                    <TextView
+                        android:id="@+id/label_expense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_expense"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_expense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_expense"
+                        app:layout_constraintTop_toBottomOf="@id/label_expense"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/red"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/label_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_history"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <View
+            android:id="@+id/separator_history"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c0c0c0"
+            android:layout_marginTop="5dp"
+            />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:flexWrap="wrap"
+            app:flexDirection="column"
+            >
+
+            <TextView
+                android:id="@+id/recycler_view_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_placeholder_text"
+                android:textSize="15sp"
+                android:gravity="center"
+                app:layout_flexGrow="100"
+                android:visibility="gone"
+                />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_history"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:dividerHeight="10dp"
+            android:divider="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_flexGrow="100"
+            />
+
+            <TextView
+                android:id="@+id/label_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_add"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                />
+
+            <View
+                android:id="@+id/separator_add"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c0c0c0"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_text"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_name_placeholder"
+                android:autofillHints="@string/txt_name_placeholder"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:id="@+id/label_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_amount"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toTopOf="@id/txt_amount"
+                />
+
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_amount_placeholder"
+                android:autofillHints="@string/txt_amount_placeholder"
+                android:inputType="numberSigned|numberDecimal"
+                />
+
+            <Button
+                android:id="@+id/btn_add_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_add_transaction"
+                android:background="@color/purple"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="5dp"
+                />
+        </com.google.android.flexbox.FlexboxLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

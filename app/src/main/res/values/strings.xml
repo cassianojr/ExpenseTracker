@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="app_title">Rastreador de Despesas</string>
+    <string name="label_balance"><b>SEU SALDO</b></string>
+    <string name="renda"><b>RENDA</b></string>
+    <string name="label_expense"><b>DESPESA</b></string>
+    <string name="label_history"><b>Histórico</b></string>
+    <string name="label_add"><b>Adicionar Nova Transação</b></string>
+    <string name="label_text">Nome:</string>
+    <string name="txt_name_placeholder">Digite o nome</string>
+    <string name="label_amount">Quantidade (negativo - gasto, positivo - renda)</string>
+    <string name="txt_amount_placeholder">Digite a quantidade</string>
+    <string name="btn_add_transaction">Adicionar Nova Transação</string>
+    <string name="txt_balance"><b>%1$s</b></string>
+    <string name="txt_income">+ %1$s</string>
+    <string name="txt_expense">%1$s</string>
+    <string name="list_item_name_placeholder">%1$s</string>
+    <string name="list_item_amount_placeholder">%1$s</string>
+    <string name="history_placeholder_text">Não há histórico de transações</string>
+</resources>
